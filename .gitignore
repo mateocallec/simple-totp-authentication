@@ -1,0 +1,12 @@
+.env
+
+venv/
+.venv/
+*.db
+./data/
+./container-data/
+__pycache__/
+__pypackages__/
+build/
+dist/
+.ruff_cache/

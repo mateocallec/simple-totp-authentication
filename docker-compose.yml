@@ -1,0 +1,16 @@
+services:
+  otp-app:
+    image: simple-topt-authentication
+    container_name: simple-topt-authentication
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DATABASE_NAME=${DATABASE_NAME:-users.db}
+      - MAX_FAILED_ATTEMPTS=${MAX_FAILED_ATTEMPTS:-5}
+      - FLASK_DEBUG=${FLASK_DEBUG:-False}
+    volumes:
+      - ./container-data:/app/data
+    restart: unless-stopped

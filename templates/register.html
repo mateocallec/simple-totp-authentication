@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <div class="content">
+        <h2>Register</h2>
+
+        {% if not show_otp_field %}
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" required minlength="3">
+            <button type="submit">Register</button>
+        </form>
+        {% else %}
+        <p><b>Secret:</b> {{ secret }}</p>
+
+        <p>Scan this QR Code:</p>
+        <img src="data:image/png;base64,{{ qr_code }}">
+
+        <form method="POST" action="/verify_registration">
+            <label>Enter first OTP:</label>
+            <input type="text" name="otp" required>
+            <button type="submit">Verify</button>
+        </form>
+        {% endif %}
+
+        <hr>
+
+        <a href="/login">Login</a>
+    </div>
+</body>
+
+</html>

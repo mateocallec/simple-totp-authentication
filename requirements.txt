@@ -1,0 +1,7 @@
+flask
+pyotp
+qrcode
+pillow
+gunicorn
+python-dotenv
+ruff
