@@ -1,6 +1,6 @@
 {
   "username": "mateocallec",
-  "name": "simple-topt-authentication",
+  "name": "simple-totp-authentication",
   "registry-host": "registry-1.docker.io",
   "registry-port": 5000,
   "docker-compose": "docker-compose.yml",

@@ -1,7 +1,7 @@
 services:
-  otp-app:
-    image: simple-topt-authentication
-    container_name: simple-topt-authentication
+  simple-totp-authentication:
+    image: mateocallec/simple-totp-authentication
+    container_name: simple-totp-authentication
     ports:
       - "5000:5000"
     env_file:
